@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}TP Noté WR407D - 2025-2026{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
         {% endblock %}
@@ -12,6 +12,24 @@
         {% endblock %}
     </head>
     <body>
+     <div class="page">
+    <nav class="navbar">
+    <ul class="nav">
+    <li class="nav-item"><a href="{{ path('app_homepage') }}" class="nav-link">{{ 'Accueil' | trans}}</a></li>
+<li class="nav-item"><a href="{{ path('app_livre') }}" class="nav-link">{{ 'Livres' | trans }}</a></li>
+<li class="nav-item"><a href="{{ path('app_evenement') }}" class="nav-link">{{'Événements' | trans}}</a></li>
+<li class="nav-item"><a href="{{ path('app_recette') }}" class="nav-link">'{{ 'Recettes'| trans }}'</a></li>
+<li class="nav-item"><a href="{{ path('app_jeu') }}" class="nav-link">{{ 'Jeux' | trans }}</a></li>
+</ul>
+    </nav>
+
+    <div class="container">
         {% block body %}{% endblock %}
+        </div>
+                </div>
+
+        <footer class="footer">
+            <p>TP-S4-6D9E40</p>
+        </footer>
     </body>
 </html>

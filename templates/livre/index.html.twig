@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livres{% endblock %}
+
+{% block body %}
+<h1>Liste des livres</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Titre</th>
+        <th>Auteur</th>
+        <th>Prix</th>
+        <th>Date</th>
+        <th>Disponible</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for livre in livres %}
+        <tr>
+            <td>{{ livre.titre }}</td>
+            <td>{{ livre.auteur }}</td>
+            <td>{{ livre.prix }}</td>
+            <td>{{ livre.datePublication|date('d/m/Y') }}</td>
+            <td>{{ livre.disponible ? 'Oui' : 'Non' }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

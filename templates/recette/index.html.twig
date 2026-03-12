@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recettes{% endblock %}
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('styles/recettes.css') }}">
+{% endblock %}
+{% block body %}
+<h1>{{ 'recipes.list.title'|trans }}</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>{{ 'recipes.list.nom'|trans }}</th>
+        <th>{{ 'recipes.list.description'|trans }}</th>
+        <th>{{ 'recipes.list.prep_time'|trans }}</th>
+        <th>{{ 'recipes.list.difficulte'|trans }}</th>
+        <th>{{ 'recipes.list.categorie'|trans }}</th>
+        <th>{{ 'recipes.list.date_publication'|trans }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for recette in recettes %}
+        <tr>
+            <td>{{ recette.nom }}</td>
+            <td>{{ recette.description }}</td>
+            <td>{{ recette.tempsPreparation | duree}}</td>
+            <td>{{ recette.difficulte }}</td>
+            <td>{{ recette.categorie }}</td>
+            <td>{{ recette.datePublication|date('d/m/Y') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

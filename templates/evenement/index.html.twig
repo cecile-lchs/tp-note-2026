@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Événements{% endblock %}
+
+{% block body %}
+<h1>Liste des événements</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Titre</th>
+        <th>Date Début</th>
+        <th>Date Fin</th>
+        <th>Lieu</th>
+        <th>Prix</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for evenement in evenements %}
+        <tr>
+            <td>{{ evenement.titre }}</td>
+            <td>{{ evenement.dateDebut|date('d/m/Y') }}</td>
+            <td>{{ evenement.dateFin|date('d/m/Y') }}</td>
+            <td>{{ evenement.lieu }}</td>
+            <td>{{ evenement.prix }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recettes{% endblock %}
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('styles/recettes.css') }}">
+{% endblock %}
+{% block body %}
+    <h1>{{ 'recipes.stats.title'|trans }}</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{{ 'common.total'|trans }}</th>
+            <th>ByCategory</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for stats in stats.byCategory %}
+        <tr>
+            <td>{{ stats.categorie }}</td>
+            <td>{{ stats.total }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+{% endblock %}

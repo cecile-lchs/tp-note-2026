@@ -1,0 +1,15 @@
+Accueil: Home
+Livres: Books
+Événements: Events
+Recettes: Recipes
+Jeux: Games
+recipes.stats.title: "Statslist"
+recipes.list.title: "Recipes list"
+recipes.list.nom: "Name"
+recipes.list.description: "Description"
+recipes.list.prep_time: "Preparation Time (min.)"
+recipes.list.difficulte: "Difficulty"
+recipes.list.categorie: "Category"
+recipes.list.date_publication: "Publication Date"
+common.average: "Average"
+common.total: "Total"

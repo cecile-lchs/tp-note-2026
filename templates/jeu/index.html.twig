@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jeux{% endblock %}
+
+{% block body %}
+<h1>Liste des jeux</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Plateforme</th>
+        <th>Note</th>
+        <th>Prix</th>
+        <th>Date Sortie</th>
+        <th>Nb Avis</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for jeu in jeux %}
+        <tr>
+            <td><a href="{{ path('app_fiche', {'code': jeu.id }) }}">{{ jeu.id }}</a></td>
+            <td>{{ jeu.nom }}</td>
+            <td>{{ jeu.plateforme }}</td>
+            <td>{{ jeu.note }}</td>
+            <td>{{ jeu.prix }}</td>
+            <td>{{ jeu.dateSortie|date('d/m/Y') }}</td>
+            <td>{{ jeu.nbAvis }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
