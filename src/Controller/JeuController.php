@@ -17,15 +17,7 @@ final class JeuController extends AbstractController
         ]);
     }
 
-    #[Route('/fiche/{code}', name: 'app_fiche')]
-    public function fiche(int $code, JeuRepository $jeuRepository ): Response
-    {
-        $jeu = $jeuRepository->find($code);
 
-        return $this->render('jeu/fiche.html.twig', [
-            'jeu' => $jeu,
-        ]);
-    }
 
 
 }

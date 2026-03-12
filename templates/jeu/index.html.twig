@@ -8,7 +8,6 @@
 <table class="table">
     <thead>
     <tr>
-        <th>Id</th>
         <th>Nom</th>
         <th>Plateforme</th>
         <th>Note</th>
@@ -20,8 +19,7 @@
     <tbody>
     {% for jeu in jeux %}
         <tr>
-            <td><a href="{{ path('app_fiche', {'code': jeu.id }) }}">{{ jeu.id }}</a></td>
-            <td>{{ jeu.nom }}</td>
+<td>{{ jeu.nom }}</td>
             <td>{{ jeu.plateforme }}</td>
             <td>{{ jeu.note }}</td>
             <td>{{ jeu.prix }}</td>
